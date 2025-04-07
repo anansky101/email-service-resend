@@ -25,6 +25,7 @@ app.post('/send-email', async (req, res) => {
 
     
     try {
+        console.log(req.body);
         const { to } = req.body;
         const transporter = nodemailer.createTransport({
             host: 'smtp.resend.com',
