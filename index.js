@@ -23,9 +23,9 @@ app.get('/', (req, res) => {
 
 app.post('/send-email', async (req, res) => {
 
-    const { to } = req.body;
-
+    
     try {
+        const { to } = req.body;
         const transporter = nodemailer.createTransport({
             host: 'smtp.resend.com',
             secure: true,
