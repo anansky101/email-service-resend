@@ -3,6 +3,7 @@ import nodemailer from 'nodemailer';
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import bodyParser from 'body-parser';
 
 dotenv.config();
 
@@ -13,8 +14,7 @@ const API_KEY = process.env.RESEND_API_KEY || 'resend_api_key';
 // const resend = new Resend(API_KEY);
 
 app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
     res.send('Hello World!');
