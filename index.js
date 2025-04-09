@@ -26,7 +26,7 @@ app.post('/send-email', async (req, res) => {
     
     try {
         console.log(req.body);
-        const { to } = req.body;
+        const { to, name } = req.body;
         const transporter = nodemailer.createTransport({
             host: 'smtp.resend.com',
             secure: true,
@@ -45,7 +45,7 @@ app.post('/send-email', async (req, res) => {
               <html>
                 <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
                   <div style="max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #ddd; border-radius: 5px;">
-                    <h2 style="color: #4e6df5;">Welcome to Anan Sky Newsletter!</h2>
+                    <h2 style="color: #4e6df5;">Hello ${name} Welcome to Anan Sky Newsletter!</h2>
                     <p>Thank you for signing up for the Anan Sky newsletter. We are excited to have you on board!</p>
                     <p>We will keep you updated with the latest news, updates, and exclusive content.</p>
                     <p>If you have any questions, feel free to reach out to us at <a href="mailto:Nawafbinmohammed@anansky.sa">Nawafbinmohammed@anansky.sa</a>.</p>
